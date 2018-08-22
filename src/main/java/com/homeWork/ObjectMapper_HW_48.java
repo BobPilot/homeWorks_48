@@ -2,8 +2,11 @@ package com.homeWork;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +38,9 @@ public class ObjectMapper_HW_48 {
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             json = br.readLine();
         }
+
+        //Type listType = new TypeToken<List<Person>>(){}.getType();
+        //return new Gson().fromJson(json, listType);
 
         return oMapper.readValue(json, new TypeReference<List<Person>>(){});
     }
@@ -68,7 +74,7 @@ public class ObjectMapper_HW_48 {
 
         @Override
         public String toString() {
-            return "Person{" +
+            return "Person {" +
                     "id=" + id +
                     ", age=" + age +
                     ", name='" + name + '\'' +
