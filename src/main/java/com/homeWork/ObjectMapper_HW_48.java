@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ObjectMapper_HW_48 {
 
-    public static ObjectMapper oMapper = new ObjectMapper();
+    private static ObjectMapper oMapper = new ObjectMapper();
 
     public static void main(String [] args) throws IOException {
 
